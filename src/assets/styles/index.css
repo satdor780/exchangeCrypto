@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+section .container > h1{
+    font-size: 28px;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 1440px){
+    .container{
+        padding: 0 15px;
+    }
+}
+
+
+/*exchange page */
+

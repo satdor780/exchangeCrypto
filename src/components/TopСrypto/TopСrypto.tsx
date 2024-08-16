@@ -1,0 +1,53 @@
+import { useEffect, useState } from 'react'
+import { useAppSelector } from '../../hooks'
+import TopCryptoCard from '../TopCryptoCard/TopCryptoCard'
+import style from './TopCrypto.module.css'
+
+const TopCrypto = () => {
+    const coins = useAppSelector(state => state.coins.data?.result)
+
+    const [media, setMedia] = useState(() => {
+        if (window.innerWidth < 700) {
+            return 2; 
+        } else if (window.innerWidth < 880) {
+            return 3;
+        } else {
+            return 4;
+        }
+    });
+
+    // useEffect(() => {
+    //     if(window.innerWidth < 780){
+    //         setMedia(3)
+            
+    //     }
+    //     console.log('tue')
+    // }, []);
+
+    return(
+        <section className={style.top}>
+             <div className="container">
+                <h1>Popular Cryptocurrencies</h1>
+                <div className={style.top__inner}>
+
+                    {coins && coins.slice(0, media).map((coin, index) => (
+                        <TopCryptoCard id={coin.id} key={index} icon={coin.icon} name={coin.name} couple={coin.symbol} price={coin.price} changePrice24={coin.priceChange1d}/>
+                    ))}
+
+                  
+
+                   {/* <TopCryptoCard />
+
+                   <TopCryptoCard />
+
+                   <TopCryptoCard />
+
+                   <TopCryptoCard /> */}
+                   
+                </div>
+             </div>
+        </section>
+    )
+}
+
+export default TopCrypto

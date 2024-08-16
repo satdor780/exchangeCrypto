@@ -1,0 +1,218 @@
+.exchange{
+    margin-top: 30px;
+   
+}
+
+.exchange__inner{
+    max-width: 870px;
+}
+
+
+.exchange__inner .form{
+    background: #f8f8f8;
+    padding: 30px 20px;
+    border-radius: 15px;
+}
+
+.exchange__inner .form form{
+    max-width: 670px;
+}
+
+.exchange form > button{
+    margin-top: 10px;
+    background-color: #0bba74;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+
+.exchange form > button.sell{
+    background-color: #ff4761;
+}
+
+.exchange__info{
+    background: #f8f8f8;
+    margin-bottom: 20px;
+    /* max-width: 60%; */
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info__item:first-child{
+    padding-bottom: 10px;
+}
+
+.swap__place svg{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.swap__place:hover svg{
+    fill: #6858D5;
+}
+
+.info__item span{
+    padding-right: 7px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.info__item b{
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.exchange__info svg{
+    width: 20px;
+}
+
+.form__tabs{
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.form__tabs .tab{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.form__tabs .tab:not(.form__tabs .tab:first-child){
+    padding-left: 20px;
+}
+
+.form__tabs .tab.active{
+    color: #6858D5;
+}
+
+.form__info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+
+.form__info span{
+    font-weight: 300;
+}
+
+.item{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.item label{
+    font-size: 17px;
+    font-weight: 200;
+}
+
+.exchange .input{
+    width: 100%;
+    /* max-width: 400px; */
+    /* margin: 0 15px; */
+    display: flex;
+    
+}
+
+.item .input > button{
+    border: 1px solid #6858D5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .3s ease;
+    margin-left: 10px;
+}
+
+
+.item .input > button:hover{
+    background: #6858D5;
+    color: #fff;
+}
+
+.exchange input{
+    background: #fff;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #6858D5;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-weight: 200;
+    /*  */
+}
+
+.item input[type="number"].commission{
+    max-width: 40px;
+    margin-right: 10px;
+    padding-left: 7px;
+    
+}
+
+.search{
+    margin-bottom: 20px;
+}
+
+.search .results{
+    background: #f8f8f8;
+    padding: 10px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.search .results .result__item{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.search .results .result__item:last-child{
+    margin-bottom: 0;
+}
+
+
+.search .results .result__item img{
+    width: 40px;
+    padding-right: 10px;
+}
+
+.search .results .result__item b{
+    font-weight: 400;
+    transition: all .3s ease;
+}
+
+
+.search .results .result__item:hover b{
+    color: #6858D5;
+}
+
+
+@media (max-width: 620px){
+    .item{
+        grid-template-columns: 80px auto;
+    }
+
+    .item label{
+        font-size: 15px;
+    }
+    .exchange__inner .form{
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 530px){
+    .item{
+        display: block;
+    }
+    .item label{
+        font-size: 16px;
+        padding-bottom: 5px;
+        display: block;
+    }  
+}

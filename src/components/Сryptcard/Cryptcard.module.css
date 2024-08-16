@@ -1,0 +1,76 @@
+.item{
+    display: grid;
+    grid-template-columns: 25% 15% 20% 25% 15%;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+.item.amount{
+    grid-template-columns: 15% 15% 10% 20% 25% 15%;
+}   
+
+.item .couple img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.item .couple{
+    display: flex;
+    align-items: center;
+    /* padding-left: 10px; */
+}
+
+.item .item__chart{
+    height: 50px;
+}
+
+.item .couple b{
+    font-weight: 400;
+}
+
+.item .price{
+    font-size: 18px;
+}
+
+.item .change__price{
+    display: flex;
+    justify-content: center;
+}
+
+.item .action{
+    display: flex;
+    justify-content: end;
+}
+
+.item .action button{
+    padding: 10px 15px;
+    color: #fff;
+    background: #6858D5;
+    border-radius: 10px;
+}
+
+@media (max-width: 830px){
+    .item{
+        grid-template-columns: 35% 20% 20% 25%;
+        padding: 10px 5px;
+    }
+    
+    .item .action button{
+        padding: 7px 7px;
+        font-size: 14px;
+    }
+    .item .couple b{
+        font-size: 15px;
+    }
+    .item .couple img{
+        width: 25px;
+        margin-right: 7px;
+    }
+    .item .price{
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+    }
+}

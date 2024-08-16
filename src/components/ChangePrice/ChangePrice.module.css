@@ -1,0 +1,37 @@
+.change__price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.change__price svg{
+    width: 20px;
+    margin-right: 5px;
+}
+
+.change__price.up svg{
+    fill: #0bba74;
+    
+}
+
+.change__price.down svg{
+    fill: red;
+}
+
+.change__price.up span{
+    color: #0bba74;
+}
+
+.change__price.down span{
+    color: red;
+}
+
+@media (max-width: 520px){
+    .change__price span{
+        font-size: 15px;
+    }
+    .change__price svg{
+        width: 15px;
+        margin-right: 2px;
+    }
+}
