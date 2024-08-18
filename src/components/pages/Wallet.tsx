@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Chart as ChartJS, defaults } from "chart.js/auto";
+import { useEffect, useState } from "react";
+import { defaults } from "chart.js/auto";
 import {Pie} from "react-chartjs-2";
 
 import style from '../../assets/styleModules/Wallet.module.css'
@@ -23,7 +23,7 @@ const Wallet = () => {
     let slice = media ? 3: 100
 
     if (coins && sourceData) {
-        const updatedSourceData = sourceData.map((item, index) => {
+        const updatedSourceData = sourceData.map((item) => {
 
             for (let index = 0; index < coins.length; index++) {
                 if (coins[index].id === item.id) {

@@ -11,6 +11,7 @@
 
 .wallet__chart{
     width: 1000px;
+    height: 500px;
 }
 
 @media (max-width: 1340px){

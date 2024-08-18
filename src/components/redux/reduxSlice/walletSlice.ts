@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 // import { createAsyncThunk } from '@reduxjs/toolkit'
 // import axios from 'axios'

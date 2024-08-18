@@ -27,35 +27,83 @@ const Exchange: React.FC = () => {
 
     const [clickInsideResult, setClickInsideResult] = useState(false);
 
-    // form states
-    const [amount, setAmount] = useState(0)
-    const [total, setTotal] = useState(0)
-    let commission: number = total ? total / 100 / 5: 0
+    const [amount, setAmount] = useState('0');
+    const [total, setTotal] = useState('0');
 
-    const setTotalFunc = (e: number) => {
-        let value = e;
-        const regex = /^\d*\.?\d{0,3}$/; 
-    
-        if (regex.test(value)) {
-            setTotal(value);
+    const commission: number = total ? parseFloat(total) / 100 / 5 : 0;
+
+    const isValidAmount = (value: number) => {
+        const regex = /^\d*\.?\d{0,2}$/;
+        return regex.test(value.toString());
+    };
+
+    const setAmountFunc = (e: React.ChangeEvent<HTMLInputElement> | number) => {
+        if (typeof e === "number") {
+            setAmount(String(e))
             if (currentCoin) {
-                const calculatedAmount = value ? (value / currentCoin.price).toFixed(3) : 0;
-                setAmount(calculatedAmount);
+                const calculatedAmount: number = e * currentCoin.price;
+                setTotal(String(calculatedAmount.toFixed(4)));
+            }
+        } else {
+
+            const value = e.target.value;
+            const floatValue = parseFloat(value);
+
+            if (isNaN(floatValue) || floatValue === 0) {
+                if(!isValidAmount(floatValue)){
+                    setAmount(value)
+                }else{
+                    setAmount(String(floatValue));
+                }
+                setTotal('0')
+            } else {
+                if(!isValidAmount(floatValue)){
+                    setAmount(floatValue.toFixed(3))
+                }else{
+                    setAmount(value);
+                }
+                if (currentCoin) {
+                    const calculatedAmount: number = floatValue * currentCoin.price;
+                    setTotal(String(calculatedAmount.toFixed(4)));
+                }
             }
         }
     };
-    
-    const setAmountFunc = (e: number) => {
-        let value = e; 
-        const regex = /^\d*\.?\d{0,3}$/;
-    
-        if (regex.test(value)) {
-            setAmount(value);
-            const calculatedTotal = currentCoin ? (value * currentCoin.price).toFixed(3) : 0;
-            setTotal(calculatedTotal);
+
+    const setTotalFunc = (e: React.ChangeEvent<HTMLInputElement> | number) => {
+
+        if (typeof e === "number") {
+            // const value = parseFloat(e)
+            setTotal(String(e))
+            if (currentCoin) {
+                const calculatedAmount: number = e / currentCoin.price;
+                setAmount(String(calculatedAmount.toFixed(4)));
+            }
+        } else {
+            const value = e.target.value;
+            const floatValue = parseFloat(value);
+
+            if (isNaN(floatValue) || floatValue === 0) {
+                if(!isValidAmount(floatValue)){
+                    setTotal(value)
+                }else{
+                    setTotal(String(floatValue));
+                }
+                setAmount('0')
+            } else {
+                if(!isValidAmount(floatValue)){
+                    setTotal(floatValue.toFixed(3))
+                }else{
+                    setTotal(value);
+                }
+                if (currentCoin) {
+                    const calculatedAmount: number = floatValue / currentCoin.price;
+                    setAmount(String(calculatedAmount.toFixed(4)));
+                }
+            }
         }
     };
-    
+        
     useEffect(() => {
         if (coins && coins.length > 0) {
             const filteredCoins = coins.filter((coin) => coin.id !== 'tether');
@@ -90,7 +138,7 @@ const Exchange: React.FC = () => {
         filteredCoins && setActiveCoin(filteredCoins);
     };    
 
-    const blur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const blur = () => {
         if (clickInsideResult) {
             setClickInsideResult(false);
             return; 
@@ -194,7 +242,7 @@ const Exchange: React.FC = () => {
                         <div className={style.item}>
                             <label>Количество</label>
                             <div className={style.input}>
-                                <input type="number" step="0.01" value={amount} onChange={(e) => setAmountFunc(e.target.value)} />
+                                <input type="number" step="0.01" value={amount || ''} onChange={(e) => setAmountFunc(e)} min="0"/>
                                 <button type="button" onClick={ToMax}>max</button>
                             </div>
                            
@@ -215,7 +263,7 @@ const Exchange: React.FC = () => {
                         <div className={style.item}>
                             <label >Всего</label>
                             <div className={style.input}>
-                                <input type="number" step="0.01" value={total} onChange={(e) => setTotalFunc(e.target.value)}/>
+                                <input type="number" step="0.01" value={total || ''} onChange={(e) => setTotalFunc(e)}/>
                                 <button type="button" onClick={ToMax}>max</button>
                             </div>
                             

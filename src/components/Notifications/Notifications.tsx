@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../hooks"
 import { hideNotification } from "../redux/reduxSlice/walletSlice";
 

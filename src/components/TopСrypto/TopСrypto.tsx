@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { useAppSelector } from '../../hooks'
 import TopCryptoCard from '../TopCryptoCard/TopCryptoCard'
 import style from './TopCrypto.module.css'
@@ -6,23 +5,17 @@ import style from './TopCrypto.module.css'
 const TopCrypto = () => {
     const coins = useAppSelector(state => state.coins.data?.result)
 
-    const [media, setMedia] = useState(() => {
+    const getMediaValue = () => {
         if (window.innerWidth < 700) {
-            return 2; 
+            return 2;
         } else if (window.innerWidth < 880) {
             return 3;
         } else {
             return 4;
         }
-    });
+    };
 
-    // useEffect(() => {
-    //     if(window.innerWidth < 780){
-    //         setMedia(3)
-            
-    //     }
-    //     console.log('tue')
-    // }, []);
+    const media = getMediaValue()
 
     return(
         <section className={style.top}>

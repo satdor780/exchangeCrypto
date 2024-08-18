@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import ChangePrice from '../ChangePrice/ChangePrice'
 import LineChart from '../LineChart/LineChart';
 import style from './Cryptcard.module.css'
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 interface CryptcardProps {
