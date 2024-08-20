@@ -1,4 +1,4 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -7,14 +7,14 @@ import Header from './components/Header/Header.tsx';
 import Exchange from './components/pages/Exchange.tsx';
 import Wallet from './components/pages/Wallet.tsx';
 
-// import { useAppDispatch, useAppSelector } from './hooks.ts';
-// import { fetchDate } from './components/redux/reduxSlice/coinsSlice.ts';
+import { useAppDispatch } from './hooks.ts';
+import { fetchDate } from './components/redux/reduxSlice/coinsSlice.ts';
 
 function App() {
-  // const dispatch = useAppDispatch()
-  // useEffect(() => {
-  //   // dispatch(fetchDate())
-  // }, [])
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(fetchDate())
+  }, [])
 
   return (
     <> 

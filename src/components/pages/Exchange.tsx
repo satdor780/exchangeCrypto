@@ -53,7 +53,7 @@ const Exchange: React.FC = () => {
                 if(!isValidAmount(floatValue)){
                     setAmount(value)
                 }else{
-                    setAmount(String(floatValue));
+                    setAmount(value);
                 }
                 setTotal('0')
             } else {
@@ -73,7 +73,6 @@ const Exchange: React.FC = () => {
     const setTotalFunc = (e: React.ChangeEvent<HTMLInputElement> | number) => {
 
         if (typeof e === "number") {
-            // const value = parseFloat(e)
             setTotal(String(e))
             if (currentCoin) {
                 const calculatedAmount: number = e / currentCoin.price;
@@ -241,33 +240,56 @@ const Exchange: React.FC = () => {
                     <form>
                         <div className={style.item}>
                             <label>Количество</label>
-                            <div className={style.input}>
-                                <input type="number" step="0.01" value={amount || ''} onChange={(e) => setAmountFunc(e)} min="0"/>
+                            <div className={style.item__actions}>
+                                <div className={style.input}>
+                                    <input type="number" step="0.01" value={amount || ''} onChange={(e) => setAmountFunc(e)} min="0"/>
+                                    
+                                </div> 
                                 <button type="button" onClick={ToMax}>max</button>
                             </div>
                            
                         </div>
+                        
+                        {action == 'sell' && parseFloat(amount) > max && (
+                            <div className={style.item}>
+                                <span className={style.err}>err</span>
+                            </div>
+                        )}
+                       
                         <div className={style.item}>
                             <label>Курс</label>
-                            <div className={style.input}>
-                                <input type="number" defaultValue={currentCoin && currentCoin.price.toFixed(2)} readOnly/>
+                            <div className={style.item__actions}>
+                                <div className={style.input}>
+                                    <input type="number" defaultValue={currentCoin && currentCoin.price.toFixed(2)} readOnly/>
+                                </div>
                             </div>
                         </div>
                         <div className={style.item}>
                             <label>Комиссия</label>
-                            <div className={style.input}>
-                                <input type="number" defaultValue="0.2" className={style.commission} readOnly/>
-                                <input type="text" value={commission.toFixed(3)} readOnly/>
+                            <div className={style.item__actions}>
+                            <input type="number" defaultValue="0.2" className={style.commission} readOnly/>
+                                <div className={style.input}>
+                                    <input type="text" value={commission.toFixed(3)} readOnly/>
+                                </div>
+                                
                             </div>
                         </div>
                         <div className={style.item}>
                             <label >Всего</label>
-                            <div className={style.input}>
-                                <input type="number" step="0.01" value={total || ''} onChange={(e) => setTotalFunc(e)}/>
+                            <div className={style.item__actions}>
+                                <div className={style.input}>
+                                    <input type="number" step="0.01" value={total || ''} onChange={(e) => setTotalFunc(e)}/>
+                                </div>
                                 <button type="button" onClick={ToMax}>max</button>
                             </div>
                             
                         </div>
+
+                        {action == 'buy' && Number(total) > max &&  (
+                            <div className={style.item}>
+                                <span className={style.err}>err</span>
+                            </div>
+                        )}
 
                         <button 
                             onClick={exchangeAction} 

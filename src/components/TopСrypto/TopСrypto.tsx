@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../hooks'
 import TopCryptoCard from '../TopCryptoCard/TopCryptoCard'
 import style from './TopCrypto.module.css'
+import TopCryptoSkeleton from '../TopCryptoCard/TopCryptoSkeleton'
 
 const TopCrypto = () => {
     const coins = useAppSelector(state => state.coins.data?.result)
@@ -23,19 +24,11 @@ const TopCrypto = () => {
                 <h1>Popular Cryptocurrencies</h1>
                 <div className={style.top__inner}>
 
-                    {coins && coins.slice(0, media).map((coin, index) => (
+                    {coins ? coins.slice(0, media).map((coin, index) => (
                         <TopCryptoCard id={coin.id} key={index} icon={coin.icon} name={coin.name} couple={coin.symbol} price={coin.price} changePrice24={coin.priceChange1d}/>
-                    ))}
-
-                  
-
-                   {/* <TopCryptoCard />
-
-                   <TopCryptoCard />
-
-                   <TopCryptoCard />
-
-                   <TopCryptoCard /> */}
+                    )): (
+                        <TopCryptoSkeleton amount={media}/>
+                    )}
                    
                 </div>
              </div>

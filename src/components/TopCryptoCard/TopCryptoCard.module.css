@@ -1,5 +1,5 @@
 
-.item{
+.item, .skeleton__item{
     display: block;
     padding: 20px 20px;
     background-color: #f8f8f8;
@@ -32,6 +32,23 @@
     justify-content: space-between;
     font-size: 18px;
 }
+
+.skeleton__item {
+    height: 200px;
+    background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+    background-size: 600px;
+    animation: shine-lines 2s infinite linear;
+}
+
+@keyframes shine-lines {
+    0% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: -150%;
+    }
+}
+  
 
 @media (max-width: 520px){
     .item{

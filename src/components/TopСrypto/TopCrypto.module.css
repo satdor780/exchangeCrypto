@@ -9,16 +9,11 @@
     grid-gap: 20px;
 }
 
-.top__inner .item{
+.top__inner .item, .skeleton__item{
     padding: 20px 20px;
     background-color: #f8f8f8;
     border-radius: 10px;
 }
-
-/* .top__inner .item > svg{
-    width: 20px;
-    margin-right: 5px;
-} */
 
 .top__inner .item .name{
    padding-bottom: 12px;
