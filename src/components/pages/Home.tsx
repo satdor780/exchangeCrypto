@@ -1,5 +1,5 @@
-import Market from "../Market/Market"
-import TopCrypto from "../TopСrypto/TopСrypto"
+import Market from "../widgets/Market/Market/Market"
+import TopCrypto from "../widgets/TopСrypto/TopСrypto/TopСrypto"
 
 const Home = () => {
     return(

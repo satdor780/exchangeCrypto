@@ -1,6 +1,6 @@
-import { useAppSelector } from '../../hooks'
+import { useAppSelector } from '../../../../hooks'
 import TopCryptoCard from '../TopCryptoCard/TopCryptoCard'
-import style from './TopCrypto.module.css'
+import style from './../../../../styles/TopCrypto.module.css'
 import TopCryptoSkeleton from '../TopCryptoCard/TopCryptoSkeleton'
 
 const TopCrypto = () => {

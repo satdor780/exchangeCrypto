@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import style from '../../assets/styleModules/Exchange.module.css'
+import style from '../../styles/Exchange.module.css'
 import { useAppSelector, useAppDispatch } from '../../hooks'
-import { exchange } from '../redux/reduxSlice/walletSlice'
+import { exchange } from '../processes/wallet/walletSlice'
 import { Result, walletResult } from '../types/types'
-import Notifications from '../Notifications/Notifications'
+import Notifications from '../shared/Notifications/Notifications'
 
 type RouteParams = Record<string, string | undefined>;
 

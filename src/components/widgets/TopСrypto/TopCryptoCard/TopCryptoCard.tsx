@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import ChangePrice from "../ChangePrice/ChangePrice"
-import style from './TopCryptoCard.module.css'
+import ChangePrice from "../../../shared/ChangePrice/ChangePrice"
+import style from './../../../../styles/TopCryptoCard.module.css'
 
 interface TopCryptoCardProps {
     id: string,

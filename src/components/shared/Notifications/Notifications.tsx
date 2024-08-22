@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../../hooks"
-import { hideNotification } from "../redux/reduxSlice/walletSlice";
+import { useAppSelector, useAppDispatch } from "../../../hooks"
+import { hideNotification } from "../../processes/wallet/walletSlice";
 
 const Notifications = () => {
 

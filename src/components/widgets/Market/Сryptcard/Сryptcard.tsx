@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import ChangePrice from '../ChangePrice/ChangePrice'
-import LineChart from '../LineChart/LineChart';
-import style from './Cryptcard.module.css'
+import ChangePrice from '../../../shared/ChangePrice/ChangePrice'
+import LineChart from '../../../shared/LineChart/LineChart';
+import style from './../../../../styles/Cryptcard.module.css'
 import { Link } from 'react-router-dom';
 
 interface CryptcardProps {

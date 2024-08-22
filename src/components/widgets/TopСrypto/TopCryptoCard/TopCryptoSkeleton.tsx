@@ -1,4 +1,4 @@
-import style from './TopCryptoCard.module.css';
+import style from './../../../../styles/TopCryptoCard.module.css'
 
 interface TopCryptoSkeletonProps {
     amount?: number;

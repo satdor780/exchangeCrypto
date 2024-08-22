@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { defaults } from "chart.js/auto";
 import {Pie} from "react-chartjs-2";
 
-import style from '../../assets/styleModules/Wallet.module.css'
-import TopCryptoCard from '../TopCryptoCard/TopCryptoCard'
-import Cryptcard from '../Сryptcard/Сryptcard'
+import style from '../../styles/Wallet.module.css'
+import TopCryptoCard from "../widgets/TopСrypto/TopCryptoCard/TopCryptoCard";
+import Cryptcard from '../widgets/Market/Сryptcard/Сryptcard'
 import { useAppSelector } from "../../hooks";
 
 defaults.maintainAspectRatio = false;

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 // import { composeWithDevTools } from 'redux-devtools-extension'
-import exchangeSlice from './reduxSlice/exchangeSlice'
-import coinsSlice from './reduxSlice/coinsSlice'
-import walletSlice from './reduxSlice/walletSlice'
+import exchangeSlice from './exchange/exchangeSlice'
+import coinsSlice from './coins/coinsSlice'
+import walletSlice from './wallet/walletSlice'
 // ...
 
 const store = configureStore({

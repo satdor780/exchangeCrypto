@@ -1,4 +1,4 @@
-import style from './Cryptcard.module.css'
+import style from './../../../../styles/Cryptcard.module.css'
 
 const CryptcardSkeleton: React.FC = () => {
     return(
